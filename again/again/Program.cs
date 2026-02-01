@@ -35,7 +35,23 @@ namespace again
             }
             return result;
         }
-        
+        static string CamelCase(string str)
+        {
+            string result = "";
+            for (int i = 0; i < str.Length; i++)
+            {
+                
+                if (str[Math.Max(0, i - 1)] == ' ' && str[i] != ' ')
+                {
+                    result += str[i].ToString().ToUpper();
+                } else if (str[i] != ' ')
+                {
+                    result += str[i].ToString().ToLower();
+                }
+            }
+            return result;
+
+        }
         static string Prompt(string prompt, bool newLine)
         {
             string result = "";
